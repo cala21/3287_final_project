@@ -42,7 +42,8 @@ class Settings(SQLObject):
 class Measurements(SQLObject):
     molecule = ForeignKey("Molecule",cascade=True)
     settings = ForeignKey("Settings",cascade=True)
-    ramanShift = IntCol()
+    ramanShift = FloatCol()
+    count = IntCol()
     date = IntCol()
     time = IntCol()
 
