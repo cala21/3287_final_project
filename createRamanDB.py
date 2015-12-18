@@ -25,13 +25,15 @@ class Molecule(SQLObject):
 
 class Settings(SQLObject):
     temperature = IntCol()
-    acquisation_mode = StringCol()
+    acquisation_mode = StringCol(default = '1')
+    color = StringCol(default = 'green')
     frequency = IntCol()
-    number_accumulation = IntCol()
-    exposure_time = IntCol()
-    h_binning = IntCol()
-    v_binnng = IntCol()
-    h_flip = IntCol()
+    number_accumulation = IntCol(default = 400)
+    exposure_time = IntCol(default = 4)
+    h_binning = IntCol(default = 0)
+    v_binnng = IntCol(default = 0)
+    h_flip = IntCol(default = 0)
+    v_flip = IntCol(default = 0)
 
     measurements = MultipleJoin("Experiment")
 
@@ -56,8 +58,5 @@ class Experiment(SQLObject):
 
 # Generate database
 
-init(new=True)
-Settings.createTable()
-Molecule.createTable()
-Experiment.createTable()
-Data.createTable()
+
+
