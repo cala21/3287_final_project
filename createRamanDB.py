@@ -46,8 +46,8 @@ class Data(SQLObject):
 
 
 class Experiment(SQLObject):
-    date = IntCol()
-    time = IntCol()
+    date = StringCol()
+    time = StringCol()
     
     molecule = ForeignKey("Molecule",cascade=True)
     settings = ForeignKey("Settings",cascade=True)
