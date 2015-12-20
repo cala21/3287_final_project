@@ -56,7 +56,5 @@ class Experiment(SQLObject):
     data = MultipleJoin("Data")
 
 
-# Generate database
-
 
 
